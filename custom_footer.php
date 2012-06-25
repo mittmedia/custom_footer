@@ -1,8 +1,7 @@
 <?php
 /*
 Plugin Name: Custom footer
-Plugin URI: https://github.com/mittmedia/custom_footer
-
+Plugin URI: https://github.com/mittmedia/portal
 Description: Adds a custom footer text.
 Version: 1.0.0
 Author: Fredrik Sundström
@@ -41,13 +40,9 @@ $custom_footer_app = new \WpMvc\Application();
 
 $custom_footer_app->init( 'CustomFooter', WP_PLUGIN_DIR . '/custom_footer' );
 
-add_action( "admin_menu", "custom_footer" );
+// WP: Add pages
+add_action( "network_admin_menu", "custom_footer" );
 function custom_footer()
-{
-  add_options_page( "Custom footer", "Custom footer", "Administrator", "custom_footer_menu", "custom_footer_page" );
-}
-
-function custom_footer_page()
 {
   add_submenu_page( 'settings.php', 'Custom Footer Settings', 'Custom Footer', 'Super Admin', 'custom_footer_settings', 'custom_footer_settings_page');
 }

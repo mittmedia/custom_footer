@@ -1,8 +1,7 @@
-<?php global $site; global $theme_names; ?>
+<?php global $site; ?>
 
 <div class="wrap">
   <div id="icon-options-general" class="icon32"><br></div>
-
   <h2><?php _e( 'Custom Footer Settings' ); ?></h2>
   <?php
 
