@@ -7,7 +7,6 @@ namespace CustomFooter
     public function index()
     {
       global $site;
-      global $theme_names;
 
       $site = \WpMvc\Site::find( 1 );
       #$footer = \WpMvc\CustomFooter::virgin();
@@ -19,8 +18,6 @@ namespace CustomFooter
 
         $site->save();
       }
-
-      $this->get_theme_names( $theme_names );
 
       $this->render( $this, "index" );
     }
