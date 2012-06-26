@@ -17,6 +17,8 @@ namespace CustomFooter
         $site->takes_post( $_POST['site'] );
 
         $site->save();
+
+        static::redirect_to( "{$_SERVER['REQUEST_URI']}&custom_footer_updated=1" );
       }
 
       $this->render( $this, "index" );

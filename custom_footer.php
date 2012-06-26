@@ -53,3 +53,14 @@ function custom_footer_settings_page()
   
   $custom_footer_app->footer_controller->index();
 }
+
+if ( isset( $_GET['custom_footer_updated'] ) ) {
+  add_action( 'network_admin_notices', 'custom_footer_updated_notice' );
+}
+
+function custom_footer_updated_notice()
+{
+  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.' ) );
+
+  echo $html;
+}
