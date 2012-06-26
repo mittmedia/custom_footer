@@ -41,8 +41,8 @@ $custom_footer_app = new \WpMvc\Application();
 $custom_footer_app->init( 'CustomFooter', WP_PLUGIN_DIR . '/custom_footer' );
 
 // WP: Add pages
-add_action( "network_admin_menu", "custom_footer" );
-function custom_footer()
+add_action( 'network_admin_menu', 'custom_footer_add_pages' );
+function custom_footer_add_pages()
 {
   add_submenu_page( 'settings.php', 'Custom Footer Settings', 'Custom Footer', 'Super Admin', 'custom_footer_settings', 'custom_footer_settings_page');
 }
