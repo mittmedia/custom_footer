@@ -2,7 +2,7 @@
 
 <div class="wrap">
   <div id="icon-options-general" class="icon32"><br></div>
-  <h2><?php _e( 'Custom Footer Settings' ); ?></h2>
+  <h2><?php _e( 'Custom Footer Settings', 'custom-footer' ); ?></h2>
   <?php
 
   $content = array(

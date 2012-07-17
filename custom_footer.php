@@ -50,7 +50,7 @@ function custom_footer_add_pages()
 function custom_footer_settings_page()
 {
   global $custom_footer_app;
-  
+
   $custom_footer_app->footer_controller->index();
 }
 
@@ -60,7 +60,7 @@ if ( isset( $_GET['custom_footer_updated'] ) ) {
 
 function custom_footer_updated_notice()
 {
-  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.' ) );
+  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.', 'custom-footer' ) );
 
   echo $html;
 }
