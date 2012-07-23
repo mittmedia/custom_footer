@@ -12,7 +12,7 @@ namespace CustomFooter
 
       $this->create_attribute_if_not_exists( $site, 'footer_content' );
 
-      if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'custom_footer_settings' ) {
         $site->takes_post( $_POST['site'] );
 
         $site->save();
