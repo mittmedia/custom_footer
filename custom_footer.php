@@ -54,6 +54,15 @@ function custom_footer_settings_page()
   $custom_footer_app->footer_controller->index();
 }
 
+add_action('plugin_custom_footer', 'custom_footer_echo_html');
+
+function custom_footer_echo_html()
+{
+  $site = \WpMvc\Site::find( 1 );
+
+  echo $site->sitemeta->footer_content->meta_value;
+}
+
 if ( isset( $_GET['custom_footer_updated'] ) ) {
   add_action( 'network_admin_notices', 'custom_footer_updated_notice' );
 }
